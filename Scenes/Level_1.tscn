@@ -1,5 +1,51 @@
-[gd_scene format=3 uid="uid://bm1gbjhjp4qfy"]
+[gd_scene load_steps=4 format=3 uid="uid://bm1gbjhjp4qfy"]
+
+[ext_resource type="Script" path="res://Scripts/Level_1.gd" id="1_7sy7g"]
+[ext_resource type="Texture2D" uid="uid://clj3f05ykw00f" path="res://Sprites/godot.svg" id="2_gr3vw"]
+[ext_resource type="Script" path="res://Scripts/Generic_Build_Button.gd" id="2_sghft"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_7sy7g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_sghft")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-519, 269)
+scale = Vector2(0.585938, 0.585938)
+texture = ExtResource("2_gr3vw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-519, 269)
+scale = Vector2(0.585938, 0.585938)
+polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -64, 58, -64, -59, -59, -63.8, 59.2, -64)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, -100)
+script = ExtResource("2_sghft")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(-519, 269)
+scale = Vector2(0.585938, 0.585938)
+texture = ExtResource("2_gr3vw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2(-519, 269)
+scale = Vector2(0.585938, 0.585938)
+polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -64, 58, -64, -59, -59, -63.8, 59.2, -64)
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(0, -200)
+script = ExtResource("2_sghft")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
+position = Vector2(-519, 269)
+scale = Vector2(0.585938, 0.585938)
+texture = ExtResource("2_gr3vw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
+position = Vector2(-519, 269)
+scale = Vector2(0.585938, 0.585938)
+polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -64, 58, -64, -59, -59, -63.8, 59.2, -64)
