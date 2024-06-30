@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://clj3f05ykw00f" path="res://Sprites/godot.svg" id="2_gr3vw"]
 [ext_resource type="Script" path="res://Scripts/Generic_Build_Button.gd" id="2_sghft"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=["shared"]]
 script = ExtResource("1_7sy7g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_sghft")
+building = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-519, 269)
@@ -25,6 +26,7 @@ polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -6
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(0, -100)
 script = ExtResource("2_sghft")
+building = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 position = Vector2(-519, 269)
@@ -39,6 +41,7 @@ polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -6
 [node name="Area2D3" type="Area2D" parent="."]
 position = Vector2(0, -200)
 script = ExtResource("2_sghft")
+building = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
 position = Vector2(-519, 269)
@@ -49,3 +52,7 @@ texture = ExtResource("2_gr3vw")
 position = Vector2(-519, 269)
 scale = Vector2(0.585938, 0.585938)
 polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -64, 58, -64, -59, -59, -63.8, 59.2, -64)
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
+[connection signal="input_event" from="Area2D2" to="Area2D2" method="_on_input_event"]
+[connection signal="input_event" from="Area2D3" to="Area2D3" method="_on_input_event"]
